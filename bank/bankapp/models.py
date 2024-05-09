@@ -84,6 +84,7 @@ class Transaction(models.Model):
     destination_account = models.ForeignKey(Account, related_name='destination_transactions', on_delete=models.CASCADE)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     date = models.DateTimeField(default=timezone.now)   
+    
 
 class LoanApplication(models.Model):
     LOAN_TYPES = [

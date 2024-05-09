@@ -85,12 +85,6 @@ class LoanApplicationSerializer(serializers.ModelSerializer):
         model = LoanApplication
         fields = '__all__'
     
-    
-class CategoryReportSerializer(serializers.Serializer):
-    name = serializers.CharField()
-    total_amount = serializers.DecimalField(max_digits=10, decimal_places=2)
-    budget_amount = serializers.DecimalField(max_digits=10, decimal_places=2)
-    exceeded_amount = serializers.DecimalField(max_digits=10, decimal_places=2)
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -107,6 +101,13 @@ class ExpenseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Expense
         fields = '__all__'
+        
+
+class CategoryReportSerializer(serializers.Serializer):
+    name = serializers.CharField()
+    total_amount = serializers.DecimalField(max_digits=10, decimal_places=2)
+    budget_amount = serializers.DecimalField(max_digits=10, decimal_places=2)
+    exceeded_amount = serializers.DecimalField(max_digits=10, decimal_places=2)
         
 class SavingsGoalSerializer(serializers.ModelSerializer):
     class Meta:

@@ -176,11 +176,11 @@ class AccountUpdateView(generics.RetrieveUpdateAPIView):
         else:
             return Response({"error": "You do not have permission to update this account"}, status=status.HTTP_403_FORBIDDEN)
 
-    def put(self, request, *args, **kwargs):
-        return self.update(request, *args, **kwargs)
+    # def put(self, request, *args, **kwargs):
+    #     return self.update(request, *args, **kwargs)
 
-    def patch(self, request, *args, **kwargs):
-        return self.partial_update(request, *args, **kwargs)
+    # def patch(self, request, *args, **kwargs):
+    #     return self.partial_update(request, *args, **kwargs)
     
 class AccountDeleteView(generics.DestroyAPIView):
     queryset = Account.objects.all()
